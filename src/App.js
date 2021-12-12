@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LessonManagement from "./components/LessonManagement"
 import Students from "./components/Students"
 import Groups from "./components/Groups"
+import AddStudent from "./components/AddStudent"
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
 
         <Route path="/groups">
           <Groups />
+        </Route>
+
+        <Route path="/add_student">
+          <AddStudent />
         </Route>
 
         <Route path="/">
