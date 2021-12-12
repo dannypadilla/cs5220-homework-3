@@ -13,8 +13,8 @@ function Groups() {
         </div>
 
         <div>
-            <table border="1px">
-                
+            <table border="1" cellpadding="5" cellspacing="2">
+
                 <thead>
                     <tr>
                         <th>Group</th>
@@ -24,8 +24,8 @@ function Groups() {
 
                 <tbody>
                     <tr>
-                        <td>a</td>
-                        <td>b</td>
+                        <td>Minnows</td>
+                        <td>John, Luke</td>
                     </tr>
                 </tbody>
 
