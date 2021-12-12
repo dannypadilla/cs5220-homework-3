@@ -7,13 +7,14 @@ function Students() {
         <>
 
         <h2>Students</h2>
-        
+
         <div>
             <Link to="/add_student">Add Student</Link>
         </div>
-        
+
         <div>
             <table border="1px">
+
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -23,6 +24,7 @@ function Students() {
                         <th>Group</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr>
                         <td>a</td>
@@ -32,8 +34,11 @@ function Students() {
                         <td>e</td>
                     </tr>
                 </tbody>
-            </table>
 
+            </table>
+        </div>
+        
+        <div>
             <Link to="/">Back</Link>
         </div>
 
