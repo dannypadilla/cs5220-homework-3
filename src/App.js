@@ -1,0 +1,30 @@
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LessonManagement from "./components/LessonManagement"
+import Students from "./components/Students"
+import Groups from "./components/Groups"
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+
+        <Route path= "/students">
+          <Students />
+        </Route>
+
+        <Route path="/groups">
+          <Groups />
+        </Route>
+
+        <Route path="/">
+          <LessonManagement />
+        </Route>
+
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
