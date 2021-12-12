@@ -14,17 +14,21 @@ function AddGroup() {
             <table border="1" cellpadding="5" cellspacing="2">
                 <thead>
                     <tr>
-                        <th>Group</th>
-                        <th>Members</th>
+                        <th>Name</th>
+                        <th>
+                            <input type="text"></input>
+                        </th>
                     </tr>
                 </thead>
                 
                 <tbody>
                     <tr>
-                        <td>Minnows</td>
-                        <td>John, Luke</td>
+                        <td colspan="2" scope="row">
+                            <button>Add</button>
+                        </td>
                     </tr>
                 </tbody>
+
             </table>
         </div>
 
