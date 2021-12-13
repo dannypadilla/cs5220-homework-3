@@ -51,6 +51,7 @@ function AddStudent() {
                                     name="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
+                                    required
                                 />
                             </td>
                         </tr>
@@ -74,6 +75,7 @@ function AddStudent() {
                                     name="parentName"
                                     value={parentName}
                                     onChange={(e) => setParentName(e.target.value)}
+                                    required
                                 />
                             </td>
                         </tr>
@@ -85,6 +87,7 @@ function AddStudent() {
                                     name="parentEmail"
                                     value={parentEmail}
                                     onChange={(e) => setParentEmail(e.target.value)}
+                                    required
                                 />
                             </td>
                         </tr>

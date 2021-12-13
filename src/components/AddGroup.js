@@ -37,6 +37,7 @@ function AddGroup() {
                                     name="name"
                                     value={name}
                                     onChange={(e) => setGroup(e.target.value)}
+                                    required
                                 />
                             </td>
                         </tr>
