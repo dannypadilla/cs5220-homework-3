@@ -21,7 +21,7 @@ function Groups() {
         <p></p>
 
         <div>
-            <table border="1" cellpadding="5" cellspacing="2">
+            <table border="1" cellPadding="5" cellSpacing="2">
 
                 <thead>
                     <tr>
@@ -34,7 +34,7 @@ function Groups() {
                     {
                         entries.map(
                             (entry) => (
-                                <tr>
+                                <tr key={entry.studentGroupId}>
                                     <td>{entry.name}</td>
                                     <td>{entry.studentList }</td>
                                 </tr>
