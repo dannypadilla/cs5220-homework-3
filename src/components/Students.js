@@ -1,8 +1,14 @@
-import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Students() {
+
+    const [students, setStudents] = useState([]);
+    useEffect( () => {
+        axios.get("http://localhost:8080/students").then( (res) => setStudents(res.data) );
+    }, []);
+
     return (
         <>
 
@@ -26,18 +32,24 @@ function Students() {
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>a</td>
-                        <td>b</td>
-                        <td>c</td>
-                        <td>d</td>
-                        <td>e</td>
-                    </tr>
+                    {
+                        students.map(
+                            (student) => (
+                                <tr key={student.id}>
+                                    <td>{student.name}</td>
+                                    <td>b</td>
+                                    <td>{student.parentName}</td>
+                                    <td>{student.parentEmail}</td>
+                                    <td>{student.groupName}</td>
+                                </tr>
+                            )
+                        )
+                    }
                 </tbody>
 
             </table>
         </div>
-        
+
         <div>
             <Link to="/">Back</Link>
         </div>
