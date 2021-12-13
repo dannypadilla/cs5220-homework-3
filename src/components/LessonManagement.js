@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 function LessonManagement() {
-    const [name, setName] = useState("");
-
     return (
         <>
             <h2>Lesson Management</h2>
