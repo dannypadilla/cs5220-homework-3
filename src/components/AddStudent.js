@@ -25,6 +25,7 @@ function AddStudent() {
 
         axios.post("http://localhost:8080/students", {
             name,
+            birthYear,
             parentName,
             parentEmail,
             groupId
@@ -61,6 +62,7 @@ function AddStudent() {
                                     name="birthYear"
                                     value={birthYear}
                                     onChange={(e) => setBirthYear(e.target.value)}
+                                    required
                                 />
                             </td>
                         </tr>
