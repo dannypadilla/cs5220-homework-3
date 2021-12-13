@@ -9,6 +9,8 @@ function Students() {
         axios.get("http://localhost:8080/students").then( (res) => setStudents(res.data) );
     }, []);
 
+    const current_date = new Date();
+
     return (
         <>
 
@@ -37,7 +39,7 @@ function Students() {
                             (student) => (
                                 <tr key={student.id}>
                                     <td>{student.name}</td>
-                                    <td>b</td>
+                                    <td>{current_date.getFullYear() - student.birthYear}</td>
                                     <td>{student.parentName}</td>
                                     <td>{student.parentEmail}</td>
                                     <td>{student.groupName}</td>
