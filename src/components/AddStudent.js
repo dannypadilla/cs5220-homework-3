@@ -5,19 +5,31 @@ import axios from "axios";
 
 
 function AddStudent() {
-    const [student, setStudent] = useState("");
+    
+    const [name, setName] = useState("");
+    const [birthYear, setBirthYear] = useState("");
+    const [parentName, setParentName] = useState("");
+    const [parentEmail, setParentEmail] = useState("");
+    const [groupId, setGroupId] = useState("");
+
     const [groups, setGroup] = useState([]);
+
+    let history = useHistory();
 
     useEffect( () => {
         axios.get("http://localhost:8080/groups").then( (res) => setGroup(res.data) );
     }, []);
 
-
-    let history = useHistory();
-
     const onSubmit = function(e) {
         e.preventDefault();
-    }
+
+        axios.post("http://localhost:8080/students", {
+            name,
+            parentName,
+            parentEmail,
+            groupId
+        }).then( () => history.push("/students") );
+    };
 
     return (
         <>
@@ -35,9 +47,9 @@ function AddStudent() {
                             <td>
                                 <input
                                     type="text"
-                                    name="group"
-                                    value={student}
-                                    onChange={(e) => setStudent(e.target.value)}
+                                    name="name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </td>
                         </tr>
@@ -46,9 +58,9 @@ function AddStudent() {
                             <td>
                                 <input
                                     type="text"
-                                    name="group"
-                                    value={student}
-                                    onChange={(e) => setStudent(e.target.value)}
+                                    name="birthYear"
+                                    value={birthYear}
+                                    onChange={(e) => setBirthYear(e.target.value)}
                                 />
                             </td>
                         </tr>
@@ -57,9 +69,9 @@ function AddStudent() {
                             <td>
                                 <input
                                     type="text"
-                                    name="group"
-                                    value={student}
-                                    onChange={(e) => setStudent(e.target.value)}
+                                    name="parentName"
+                                    value={parentName}
+                                    onChange={(e) => setParentName(e.target.value)}
                                 />
                             </td>
                         </tr>
@@ -68,23 +80,24 @@ function AddStudent() {
                             <td>
                                 <input
                                     type="text"
-                                    name="group"
-                                    value={student}
-                                    onChange={(e) => setStudent(e.target.value)}
+                                    name="parentEmail"
+                                    value={parentEmail}
+                                    onChange={(e) => setParentEmail(e.target.value)}
                                 />
                             </td>
                         </tr>
                         <tr>
                             <th>Group</th>
                             <td>
-                                <select>
+                                <select name="groupId" onChange={(e) => setGroupId(e.target.value)}>
                                     <option></option>
                                     {
                                         groups.map(
                                             (group) => (
                                                 <option
                                                     key={group.studentGroupId}
-                                                    value={group.studentGroupId}>
+                                                    value={group.studentGroupId}
+                                                    >
                                                         {group.name}
                                                 </option>
                                             )
