@@ -36,7 +36,7 @@ function Groups() {
                             (entry) => (
                                 <tr key={entry.studentGroupId}>
                                     <td>{entry.name}</td>
-                                    <td>{entry.studentList }</td>
+                                    <td>{entry.studentList.join(", ") } </td>
                                 </tr>
                             )
                         )
