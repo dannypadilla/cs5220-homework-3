@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 function Groups() {
+
+    const [entries, setEntries] = useState([]);
+    useEffect( () => {
+        axios.get("http://localhost:8080/groups").then( (res) => setEntries(res.data) );
+    }, []);
+
     return (
         <>
 
@@ -11,6 +18,7 @@ function Groups() {
         <div>
             <Link to="/add_group">Add Group</Link>
         </div>
+        <p></p>
 
         <div>
             <table border="1" cellpadding="5" cellspacing="2">
@@ -23,10 +31,16 @@ function Groups() {
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Minnows</td>
-                        <td>John, Luke</td>
-                    </tr>
+                    {
+                        entries.map(
+                            (entry) => (
+                                <tr>
+                                    <td>{entry.name}</td>
+                                    <td>{entry.studentList }</td>
+                                </tr>
+                            )
+                        )
+                    }
                 </tbody>
 
             </table>
