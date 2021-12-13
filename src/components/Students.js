@@ -21,7 +21,7 @@ function Students() {
         </div>
 
         <div>
-            <table border="1px">
+            <table border="1" cellPadding="5" cellSpacing="2">
 
                 <thead>
                     <tr>
