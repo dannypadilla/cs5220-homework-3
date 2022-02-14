@@ -16,10 +16,7 @@ function LessonManagement() {
     return (
         <>
         <Container component="main" maxWidth="sm" sx={{ mt:3, mb: 4 }}>
-            <Grid
-                container
-                justifyContent="space-between"
-            >
+
                 <Paper
                     sx={{
                         p: 2,
@@ -27,19 +24,27 @@ function LessonManagement() {
                         flexDirection: 'column',
                     }}
                 >
+
                     <Typography component="h1" variant="h4" align="center">
                         Lesson Management
                     </Typography>
 
-                    <ButtonGroup fullWidth="true" variant="contained" aria-label="outlined primary button group">
-                        <Button href="/students" variant="contained" startIcon={<SchoolIcon />}>Students</Button>
-                        <Button href="/groups" variant="contained" startIcon={<GroupIcon />}>Groups</Button>
-                    </ButtonGroup>
-
+                    <Grid
+                        container
+                        justifyContent="space-between"
+                    >
+                        <ButtonGroup
+                            fullWidth="true"
+                            orientation="vertical"
+                            aria-label="vertical outlined button group"
+                        >
+                            <Button href="/students" variant="contained" startIcon={<SchoolIcon />}>Students</Button>
+                            <Button href="/groups" variant="contained" startIcon={<GroupIcon />}>Groups</Button>
+                        </ButtonGroup>
+                    </Grid>
 
                 </Paper>
 
-            </Grid>
         </Container>
         </>
     );
