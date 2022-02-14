@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LessonManagement from "./components/LessonManagement";
-import Students from "./components/Students";
 import Groups from "./components/Groups";
 import AddStudent from "./components/AddStudent";
 import AddGroup from "./components/AddGroup";
+import StudentsMUI from './components/StudentsMUI';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Switch>
 
         <Route path= "/students">
-          <Students />
+          <StudentsMUI />
         </Route>
 
         <Route path="/groups">
