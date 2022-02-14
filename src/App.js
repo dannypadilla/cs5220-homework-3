@@ -3,9 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LessonManagement from "./components/LessonManagement";
 import Groups from "./components/Groups";
-import AddStudent from "./components/AddStudent";
 import AddGroup from "./components/AddGroup";
+// custom materialui components
 import StudentsMUI from './components/StudentsMUI';
+import AddStudentMUI from './components/AddStudentMUI';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         </Route>
 
         <Route path="/add_student">
-          <AddStudent />
+          <AddStudentMUI />
         </Route>
 
         <Route path="/add_group">
